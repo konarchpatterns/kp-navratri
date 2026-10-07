@@ -133,7 +133,7 @@ export default function Home() {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
     });
-    setMenuOpen(false);
+    setMenuOpen(false); // Make sure the menu actually closes!
   };
 
   const goTo = useCallback((idx: number) => {

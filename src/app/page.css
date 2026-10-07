@@ -2425,11 +2425,16 @@ footer {
   }
   .nav-links.mobile-open {
     display: flex !important;
-    background-color: #fff8e9 !important; /* Cream background for menu */
+    background-color: #7b1113 !important; /* Dark red background for menu */
+    bottom: auto !important;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    padding-bottom: 20px;
   }
   .nav-links.mobile-open button {
-    color: #181818 !important;
-    border-bottom: 1px solid #eadfc8 !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
   
   .desktop-only {
