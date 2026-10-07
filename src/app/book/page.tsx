@@ -486,8 +486,13 @@ export default function BookTickets() {
                 <img src="/images/logo-dark.png" alt="Logo" className="tr-logo" onError={(e) => e.currentTarget.src='/images/logo.webp'} />
                 
                 <div className="tr-type">
-                  <h3>GENERAL ENTRY</h3>
-                  <p>— ONE DAY PASS —</p>
+                  <h3 style={{fontSize: 12}}>{Object.entries(ticketQuantities).filter(([_, q]) => q > 0).map(([id, q]) => `${q}x ${TICKET_TYPES.find(t => t.id === id)?.title}`).join(', ')}</h3>
+                  <p>— TOTAL: ₹{totalAmount} —</p>
+                </div>
+
+                <div className="tr-attendee" style={{marginBottom: 12}}>
+                  <p className="tr-label">ATTENDEE</p>
+                  <p className="tr-value" style={{fontSize: 13}}>{attendees[0]?.name || "Guest"}</p>
                 </div>
 
                 <div className="tr-date">
