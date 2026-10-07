@@ -121,12 +121,24 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeGalleryTab, setActiveGalleryTab] = useState("video");
 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    // Handle scroll
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Handle screen size
+    const checkMobile = () => setIsMobile(window.innerWidth <= 992);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   const scrollTo = (id: string) => {
@@ -166,7 +178,10 @@ export default function Home() {
             />
           </button>
 
-          <nav className={`nav-links ${menuOpen ? "mobile-open" : ""}`}>
+          <nav 
+            className={`nav-links ${menuOpen ? "mobile-open" : ""}`}
+            style={{ display: isMobile && !menuOpen ? 'none' : undefined }}
+          >
 
             <button onClick={() => scrollTo("home")}>
               Home
