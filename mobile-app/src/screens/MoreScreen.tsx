@@ -12,7 +12,13 @@ const menuItems = [
   { id: 'contact', title: 'Contact Support', icon: Phone },
 ];
 
-export default function MoreScreen() {
+export default function MoreScreen({ navigation }: any) {
+  const handlePress = (id: string) => {
+    if (id === 'about') {
+      navigation.navigate('About');
+    }
+  };
+
   return (
     <SafeAreaView style={styles.safeArea} edges={['top']}>
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -31,7 +37,12 @@ export default function MoreScreen() {
           {menuItems.map((item, index) => {
             const Icon = item.icon;
             return (
-              <TouchableOpacity key={item.id} style={styles.menuItem} activeOpacity={0.7}>
+              <TouchableOpacity 
+                key={item.id} 
+                style={styles.menuItem} 
+                activeOpacity={0.7}
+                onPress={() => handlePress(item.id)}
+              >
                 <View style={styles.menuIconContainer}>
                   <Icon size={22} color={Colors.primary} />
                 </View>
