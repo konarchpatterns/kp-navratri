@@ -1381,7 +1381,7 @@ footer {
   letter-spacing: 1px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .vadodara-section {
     flex-direction: column;
     padding: 60px 20px;
@@ -1544,7 +1544,7 @@ footer {
   z-index: 3;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .singer-section {
     flex-direction: column;
     padding: 60px 20px 80px;
@@ -1701,7 +1701,7 @@ footer {
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .associates-section {
     flex-direction: column;
     padding: 60px 20px 0;
@@ -1917,7 +1917,7 @@ footer {
   /* Reduced opacity so text is clearly visible */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .venue-features-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1927,7 +1927,7 @@ footer {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .venue-features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2418,7 +2418,7 @@ footer {
 /* ==========================================================================
    MOBILE LAYOUT OVERRIDES (Matching Design)
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   /* Fix Mobile Menu Readability and Display Bug */
   .nav-links {
     display: none !important;
