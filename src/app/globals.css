@@ -1159,6 +1159,12 @@ img {
    MOBILE
 ===================================================== */
 
+@media (min-width: 600px) and (max-width: 992px) {
+  body {
+    zoom: 1.1;
+  }
+}
+
 @media (max-width: 992px) {
 
   .nav-links {
