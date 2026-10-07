@@ -1194,8 +1194,9 @@ img {
   }
 
   .logo img {
-    width: 105px;
-    top: -18px;
+    width: 80px;
+    position: relative;
+    top: 0;
   }
 
   .desktop-register {
@@ -1230,7 +1231,7 @@ img {
     border-bottom: 1px solid #eadfc8;
     text-align: left;
     font-size: 15px;
-    color: #181818;
+    color: #181818 !important;
   }
 
   .nav-links .mobile-register {
