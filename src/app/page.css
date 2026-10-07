@@ -2425,11 +2425,11 @@ footer {
   }
   .nav-links.mobile-open {
     display: flex !important;
-    background-color: #7b1113 !important; /* Dark red background for menu */
+    background-color: #fff8e9 !important; /* Cream background for menu */
   }
   .nav-links.mobile-open button {
-    color: #ffffff !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #181818 !important;
+    border-bottom: 1px solid #eadfc8 !important;
   }
   
   .desktop-only {
