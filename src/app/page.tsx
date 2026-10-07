@@ -55,6 +55,7 @@ const Youtube = ({ className }: { className?: string }) => (
 );
 
 import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 
 const heroSlides = [
   {
@@ -115,6 +116,7 @@ const associates = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -221,9 +223,9 @@ export default function Home() {
 
             <button
               className="mobile-register"
-              onClick={() => scrollTo("register")}
+              onClick={() => router.push("/book")}
             >
-              Register Now
+              Book Tickets
             </button>
 
           </nav>
@@ -231,9 +233,9 @@ export default function Home() {
           <div className="header-right">
             <button
               className="desktop-register"
-              onClick={() => scrollTo("register")}
+              onClick={() => router.push("/book")}
             >
-              Register Now
+              Book Tickets
               <ArrowRight size={17} />
             </button>
             <img
@@ -332,9 +334,9 @@ export default function Home() {
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
               <button
                 className="hero-register-btn"
-                onClick={() => scrollTo("register")}
+                onClick={() => router.push("/book")}
               >
-                Register Now
+                Book Tickets
                 <span className="arrow-circle">
                   <ArrowRight size={16} />
                 </span>
@@ -1041,8 +1043,8 @@ export default function Home() {
 
           </div>
 
-          <button className="register-large-btn">
-            Register Now
+          <button className="register-large-btn" onClick={() => router.push("/book")}>
+            Book Tickets
             <ArrowRight size={21} />
           </button>
 
