@@ -81,6 +81,24 @@ export default function BookTickets() {
   // Generate an array of attendee indices based on totalTickets
   const attendeeIndices = Array.from({ length: totalTickets }, (_, i) => i);
 
+  const [showUpiModal, setShowUpiModal] = useState(false);
+  const [selectedUpiApp, setSelectedUpiApp] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleUpiClick = (app: string) => {
+    setSelectedUpiApp(app);
+    setShowUpiModal(true);
+  };
+
+  const simulatePayment = () => {
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      setShowUpiModal(false);
+      nextStep(); // Go to step 4 (Confirm)
+    }, 2500);
+  };
+
   return (
     <div className="book-container">
       {/* HEADER */}
@@ -94,6 +112,29 @@ export default function BookTickets() {
         </div>
         <div className="header-placeholder" />
       </header>
+
+      {/* UPI Sandbox Modal */}
+      {showUpiModal && (
+        <div className="modal-overlay">
+          <div className="modal-content fade-in">
+            <h3 style={{ color: '#EAB04E', marginBottom: 12 }}>{selectedUpiApp} Sandbox</h3>
+            <p style={{ marginBottom: 24, color: '#aaa', fontSize: 14 }}>
+              Simulating payment of <strong style={{ color: '#fff' }}>₹{totalAmount}</strong> to Vadodara Vibrant Navratri.
+            </p>
+            {isProcessing ? (
+              <div className="processing-state">
+                <div className="spinner"></div>
+                <p>Processing payment securely...</p>
+              </div>
+            ) : (
+              <div className="modal-actions">
+                <button className="cancel-btn" onClick={() => setShowUpiModal(false)}>Cancel</button>
+                <button className="pay-btn" onClick={simulatePayment}>Enter PIN & Pay ₹{totalAmount}</button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* PROGRESS BAR */}
       <div className="progress-container">
@@ -320,10 +361,10 @@ export default function BookTickets() {
               <div className="upi-options">
                 <p>Pay using UPI</p>
                 <div className="upi-grid">
-                  <div className="upi-item"><div className="upi-circle">G</div><span>GPay</span></div>
-                  <div className="upi-item"><div className="upi-circle">P</div><span>PhonePe</span></div>
-                  <div className="upi-item"><div className="upi-circle">P</div><span>Paytm</span></div>
-                  <div className="upi-item"><div className="upi-circle">B</div><span>BHIM</span></div>
+                  <div className="upi-item" onClick={() => handleUpiClick('GPay')} style={{cursor: 'pointer'}}><div className="upi-circle">G</div><span>GPay</span></div>
+                  <div className="upi-item" onClick={() => handleUpiClick('PhonePe')} style={{cursor: 'pointer'}}><div className="upi-circle">P</div><span>PhonePe</span></div>
+                  <div className="upi-item" onClick={() => handleUpiClick('Paytm')} style={{cursor: 'pointer'}}><div className="upi-circle">P</div><span>Paytm</span></div>
+                  <div className="upi-item" onClick={() => handleUpiClick('BHIM')} style={{cursor: 'pointer'}}><div className="upi-circle">B</div><span>BHIM</span></div>
                   <div className="upi-item"><div className="upi-circle">...</div><span>Other UPI</span></div>
                 </div>
               </div>

@@ -1003,3 +1003,85 @@
     padding-bottom: 24px;
   }
 }
+
+/* UPI Sandbox Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #1a0305;
+  border: 1px solid #EAB04E;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.cancel-btn {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #330b11;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pay-btn {
+  flex: 2;
+  padding: 12px;
+  background-color: #EAB04E;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.processing-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.processing-state p {
+  color: #EAB04E;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(234, 176, 78, 0.3);
+  border-top-color: #EAB04E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
