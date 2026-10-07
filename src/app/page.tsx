@@ -251,6 +251,7 @@ export default function Home() {
               onClick={() => router.push("/book")}
             >
               Book Tickets
+              <ArrowRight size={14} style={{marginLeft: '2px'}} />
             </button>
 
             <button

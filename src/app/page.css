@@ -2773,14 +2773,17 @@ footer {
   }
 }
 .mobile-header-book-btn {
-  background-color: #EAB04E;
-  color: #000;
+  background-color: #d32029; /* vibrant red */
+  color: #ffffff;
   border: none;
-  padding: 6px 12px;
-  font-size: 12px;
+  padding: 8px 16px;
+  font-size: 13px;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 50px; /* pill shape */
   cursor: pointer;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
