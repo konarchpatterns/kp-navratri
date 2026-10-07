@@ -25,15 +25,17 @@ export default function AboutScreen({ navigation }: any) {
       <ScrollView style={styles.scrollView} bounces={false} showsVerticalScrollIndicator={false}>
         {/* Top Image */}
         <Image 
-          source={require('../../assets/images/toran2.jpg')} 
+          source={require('../../assets/images/mataji.jpeg')} 
           style={styles.topImage} 
         />
 
         {/* Content Container */}
         <View style={styles.content}>
-          <Text style={styles.title}>The Spirit of Navratri</Text>
+          <Text style={styles.title}>CELEBRATING DIVINITY</Text>
           <Text style={styles.description}>
-            Navratri is a vibrant celebration of faith, culture and the divine feminine energy. It brings people together through music, dance and devotion.
+            Navratri is a vibrant festival celebrated not only in India but all over the world. It is a beautiful fusion of tradition and modernity & is a grandeur of the celebration for 9 nights dedicated to the worship of Goddess Shakti in her nine forms. Navratri is not just a religious festival; it's a celebration of life, community and the triumph of good over evil. It's a time when people come together to honor the feminine divinity, immerse themselves in prayer & dance and create memories that last a lifetime.
+            {'\n\n'}
+            A ritualistic and devotional dance Garba, is the famed folk art of Gujarat that has earned the coveted Intangible Cultural Heritage (ICH) Tag of Humanity from UNESCO. The festival of Navratri is religiously performed during these nine-days. As a dance form Garba is entrenched deeply in ritualistic and devotional roots, involving people from all walks of life and it continues to thrive as a vibrant living tradition bringing communities together. It's fascinating; how the essence of devotion remains unwavering, while the expressions of worship differs from one community to another.
           </Text>
 
           {/* Grid of Stats */}
