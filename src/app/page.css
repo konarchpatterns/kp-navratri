@@ -2466,7 +2466,7 @@ footer {
   
   .slide-bg {
     display: block !important;
-    background-position: right bottom !important; /* Shift image to the left by anchoring right side */
+    background-position: 65% bottom !important; /* Shift focal point (woman) slightly towards the right */
   }
 
   .hero-overlay {
