@@ -41,12 +41,23 @@ export default function BookTickets() {
 
   // State for Step 2
   const [attendees, setAttendees] = useState([
-    { name: "Konarch Prasad", email: "konarch2026@gmail.com", phone: "+91 98765 43210", city: "Vadodara, Gujarat" },
-    { name: "Amit Sharma", email: "amit@gmail.com", phone: "+91 91234 56789", city: "" }
+    { name: "", email: "", phone: "", city: "Vadodara, Gujarat" },
+    { name: "", email: "", phone: "", city: "" }
   ]);
-
+  
   // State for Step 3
   const [paymentMethod, setPaymentMethod] = useState("upi");
+
+  const updateAttendee = (index: number, field: string, value: string) => {
+    setAttendees(prev => {
+      const newAttendees = [...prev];
+      if (!newAttendees[index]) {
+        newAttendees[index] = { name: "", email: "", phone: "", city: "" };
+      }
+      newAttendees[index] = { ...newAttendees[index], [field]: value };
+      return newAttendees;
+    });
+  };
 
   // Calculations
   const totalTickets = Object.values(ticketQuantities).reduce((a, b) => a + b, 0);
@@ -66,6 +77,9 @@ export default function BookTickets() {
 
   const nextStep = () => setStep(s => Math.min(s + 1, 4));
   const prevStep = () => setStep(s => Math.max(s - 1, 1));
+
+  // Generate an array of attendee indices based on totalTickets
+  const attendeeIndices = Array.from({ length: totalTickets }, (_, i) => i);
 
   return (
     <div className="book-container">
@@ -168,29 +182,32 @@ export default function BookTickets() {
                 <label>Full Name *</label>
                 <div className="input-wrapper">
                   <User size={18} color="#999" />
-                  <input type="text" value={attendees[0].name} readOnly />
+                  <input type="text" placeholder="Enter Full Name" value={attendees[0]?.name || ""} onChange={(e) => updateAttendee(0, 'name', e.target.value)} />
                 </div>
               </div>
               <div className="form-group">
                 <label>Email Address *</label>
                 <div className="input-wrapper">
                   <span className="icon">@</span>
-                  <input type="email" value={attendees[0].email} readOnly />
+                  <input type="email" placeholder="Enter Email Address" value={attendees[0]?.email || ""} onChange={(e) => updateAttendee(0, 'email', e.target.value)} />
                 </div>
               </div>
               <div className="form-group">
                 <label>Phone Number *</label>
                 <div className="input-wrapper">
                   <span className="icon">📞</span>
-                  <input type="tel" value={attendees[0].phone} readOnly />
+                  <input type="tel" placeholder="+91 xxxxx xxxxx" value={attendees[0]?.phone || ""} onChange={(e) => updateAttendee(0, 'phone', e.target.value)} />
                 </div>
               </div>
               <div className="form-group">
                 <label>City *</label>
                 <div className="input-wrapper">
                   <MapPin size={18} color="#999" />
-                  <select>
+                  <select value={attendees[0]?.city || "Vadodara, Gujarat"} onChange={(e) => updateAttendee(0, 'city', e.target.value)}>
                     <option>Vadodara, Gujarat</option>
+                    <option>Ahmedabad, Gujarat</option>
+                    <option>Surat, Gujarat</option>
+                    <option>Other</option>
                   </select>
                 </div>
               </div>
@@ -201,35 +218,34 @@ export default function BookTickets() {
                 <h3 className="section-heading">Additional Attendees ({totalTickets - 1})</h3>
                 <p className="section-subheading">Enter details for other attendees in your group.</p>
                 
-                <div className="attendee-card">
-                  <div className="attendee-header">
-                    <h3 className="attendee-title">👤 Attendee 2</h3>
-                    <button className="remove-btn">✕</button>
-                  </div>
-                  <div className="form-group">
-                    <label>Full Name *</label>
-                    <div className="input-wrapper">
-                      <User size={18} color="#999" />
-                      <input type="text" value={attendees[1].name} readOnly />
+                {attendeeIndices.slice(1).map((index) => (
+                  <div key={index} className="attendee-card">
+                    <div className="attendee-header">
+                      <h3 className="attendee-title">👤 Attendee {index + 1}</h3>
+                    </div>
+                    <div className="form-group">
+                      <label>Full Name *</label>
+                      <div className="input-wrapper">
+                        <User size={18} color="#999" />
+                        <input type="text" placeholder="Enter Full Name" value={attendees[index]?.name || ""} onChange={(e) => updateAttendee(index, 'name', e.target.value)} />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Email Address</label>
+                      <div className="input-wrapper">
+                        <span className="icon">@</span>
+                        <input type="email" placeholder="Enter Email Address (Optional)" value={attendees[index]?.email || ""} onChange={(e) => updateAttendee(index, 'email', e.target.value)} />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Phone Number</label>
+                      <div className="input-wrapper">
+                        <span className="icon">📞</span>
+                        <input type="tel" placeholder="+91 xxxxx xxxxx (Optional)" value={attendees[index]?.phone || ""} onChange={(e) => updateAttendee(index, 'phone', e.target.value)} />
+                      </div>
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label>Email Address</label>
-                    <div className="input-wrapper">
-                      <span className="icon">@</span>
-                      <input type="email" value={attendees[1].email} readOnly />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label>Phone Number</label>
-                    <div className="input-wrapper">
-                      <span className="icon">📞</span>
-                      <input type="tel" value={attendees[1].phone} readOnly />
-                    </div>
-                  </div>
-                </div>
-                
-                <button className="add-attendee-btn">+ Add Another Attendee</button>
+                ))}
               </>
             )}
           </div>
