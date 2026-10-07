@@ -957,6 +957,7 @@ img {
   font-family: "Cormorant Garamond", serif;
   font-size: 23px;
   margin-bottom: 18px;
+  text-align: center;
 }
 
 .footer button,
@@ -967,8 +968,15 @@ img {
   color: #ddd;
   margin-bottom: 12px;
   font-size: 13px;
-  text-align: left;
   line-height: 1.6;
+  text-align: center;
+}
+
+.footer-grid > div:not(.footer-brand) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer button:hover {
@@ -977,6 +985,7 @@ img {
 
 .footer-brand p {
   margin-top: 15px;
+  text-align: left;
 }
 
 .socials {
