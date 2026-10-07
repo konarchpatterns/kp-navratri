@@ -1927,7 +1927,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .venue-features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2418,7 +2418,7 @@ footer {
 /* ==========================================================================
    MOBILE LAYOUT OVERRIDES (Matching Design)
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Fix Mobile Menu Readability and Display Bug */
   .nav-links {
     display: none !important;
