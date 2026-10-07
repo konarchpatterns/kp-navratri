@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }: any) {
               
               {/* HEADER */}
               <View style={styles.header}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('More')}>
                   <Menu color={Colors.text} size={28} />
                 </TouchableOpacity>
                 <Image source={require('../../assets/images/logo.webp')} style={styles.logo} resizeMode="contain" />
@@ -64,7 +64,7 @@ export default function HomeScreen({ navigation }: any) {
           <Text style={styles.sectionTitle}>Quick Access</Text>
           <View style={styles.quickAccessGrid}>
             
-            <TouchableOpacity style={styles.quickAccessCard}>
+            <TouchableOpacity style={styles.quickAccessCard} onPress={() => navigation.navigate('About')}>
               <Info color={Colors.primary} size={32} />
               <Text style={styles.quickAccessText}>About</Text>
             </TouchableOpacity>
@@ -74,7 +74,7 @@ export default function HomeScreen({ navigation }: any) {
               <Text style={styles.quickAccessText}>Singers</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.quickAccessCard}>
+            <TouchableOpacity style={styles.quickAccessCard} onPress={() => navigation.navigate('Schedule')}>
               <Calendar color={Colors.primary} size={32} />
               <Text style={styles.quickAccessText}>Schedule</Text>
             </TouchableOpacity>
