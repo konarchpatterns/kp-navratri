@@ -108,10 +108,10 @@ const singers = [
 const associates = [
   { name: "Rahul Sharma", role: "Lead Event Director", image: "/images/coord_1.jpg" },
   { name: "Priya Patel", role: "Stage Coordinator", image: "/images/coord_2.jpg" },
-  { name: "Amit Desai", role: "Logistics Manager", image: "https://picsum.photos/400/500?random=11" },
-  { name: "Sneha Joshi", role: "Guest Relations", image: "https://picsum.photos/400/500?random=12" },
-  { name: "Vikram Singh", role: "Security Chief", image: "https://picsum.photos/400/500?random=13" },
-  { name: "Anjali Mehta", role: "Vendor Management", image: "https://picsum.photos/400/500?random=14" },
+  { name: "Amit Desai", role: "Logistics Manager", image: "/images/coord_3.jpg" },
+  { name: "Sneha Joshi", role: "Guest Relations", image: "/images/coord_4.jpg" },
+  { name: "Vikram Singh", role: "Security Chief", image: "/images/coord_5.jpg" },
+  { name: "Anjali Mehta", role: "Vendor Management", image: "/images/coord_6.jpg" },
 ];
 
 export default function Home() {
