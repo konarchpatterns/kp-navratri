@@ -178,7 +178,7 @@ export default function Home() {
             />
           </button>
 
-          <nav 
+          <nav
             className={`nav-links ${menuOpen ? "mobile-open" : ""}`}
             style={{ display: isMobile && !menuOpen ? 'none' : undefined }}
           >
@@ -300,7 +300,7 @@ export default function Home() {
             </h1>
 
             <h2 className="hero-subtitle-eng mobile-only">
-              VADODARA VIBRANT<br/>NAVRATRI 2026
+              VADODARA VIBRANT<br />NAVRATRI 2026
             </h2>
 
             <p className="hero-tagline desktop-only">
@@ -486,7 +486,7 @@ export default function Home() {
               It is a beautiful fusion of <strong>tradition and modernity</strong> & is a grandeur of the
               celebration for <strong>9 nights</strong> dedicated to the worship of <strong>Goddess Shakti</strong> in her nine
               forms. Navratri is not just a religious festival; it's a celebration of life, community
-              and the triumph of good over evil. It's a time when people come together to
+              and the triumph of a good over evil. It's a time when people come together to
               honor the feminine divinity, immerse themselves in prayer & dance and create
               memories that last a lifetime.
             </p>
@@ -767,7 +767,7 @@ export default function Home() {
                   <p>{singer.role}</p>
 
                 </div>
-                
+
                 <div className="singer-arrow">
                   <ChevronRight size={20} color="#c71e22" />
                 </div>
@@ -943,52 +943,52 @@ export default function Home() {
           </div>
 
           {activeGalleryTab === "video" && (
-          <>
-            <div className="gallery-videos-carousel">
-              <button className="carousel-nav left mobile-hidden"><ChevronLeft size={24} /></button>
+            <>
+              <div className="gallery-videos-carousel">
+                <button className="carousel-nav left mobile-hidden"><ChevronLeft size={24} /></button>
 
-              <div className="video-card">
-                <div className="video-thumbnail">
-                  <img src="https://picsum.photos/400/300?random=1" alt="Video thumbnail" className="gallery-img-fill" />
-                  <div className="play-button"><Play fill="currentColor" size={20} /></div>
-                  <div className="video-duration">0:45</div>
-                  <div className="video-title">Maa Ambe Aarti Darshan</div>
+                <div className="video-card">
+                  <div className="video-thumbnail">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Video thumbnail" className="gallery-img-fill" />
+                    <div className="play-button"><Play fill="currentColor" size={20} /></div>
+                    <div className="video-duration">0:45</div>
+                    <div className="video-title">Maa Ambe Aarti Darshan</div>
+                  </div>
                 </div>
-              </div>
 
-              <div className="video-card center">
-                <div className="video-thumbnail">
-                  <img src="https://picsum.photos/600/400?random=2" alt="Video thumbnail" className="gallery-img-fill" />
-                  <div className="play-button"><Play fill="currentColor" size={28} /></div>
-                  <div className="video-duration">1:20</div>
-                  <div className="video-title">Grand Garba Nights</div>
+                <div className="video-card center">
+                  <div className="video-thumbnail">
+                    <img src="https://picsum.photos/600/400?random=2" alt="Video thumbnail" className="gallery-img-fill" />
+                    <div className="play-button"><Play fill="currentColor" size={28} /></div>
+                    <div className="video-duration">1:20</div>
+                    <div className="video-title">Grand Garba Nights</div>
+                  </div>
                 </div>
-              </div>
 
-              <div className="video-card">
-                <div className="video-thumbnail">
-                  <img src="https://picsum.photos/400/300?random=3" alt="Video thumbnail" className="gallery-img-fill" />
-                  <div className="play-button"><Play fill="currentColor" size={20} /></div>
-                  <div className="video-duration">0:58</div>
-                  <div className="video-title">Traditional Garba Moments</div>
+                <div className="video-card">
+                  <div className="video-thumbnail">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Video thumbnail" className="gallery-img-fill" />
+                    <div className="play-button"><Play fill="currentColor" size={20} /></div>
+                    <div className="video-duration">0:58</div>
+                    <div className="video-title">Traditional Garba Moments</div>
+                  </div>
                 </div>
+
+                <button className="carousel-nav right mobile-hidden"><ChevronRight size={24} /></button>
               </div>
 
-              <button className="carousel-nav right mobile-hidden"><ChevronRight size={24} /></button>
-            </div>
-            
-            <div className="gallery-mobile-extras">
-              <div className="gallery-dots">
-                <span className="dot active"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
+              <div className="gallery-mobile-extras">
+                <div className="gallery-dots">
+                  <span className="dot active"></span>
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                </div>
+                <button className="watch-more-btn">
+                  Watch More Videos <span style={{ marginLeft: '8px' }}>→</span>
+                </button>
               </div>
-              <button className="watch-more-btn">
-                Watch More Videos <span style={{marginLeft: '8px'}}>→</span>
-              </button>
-            </div>
-          </>
+            </>
           )}
 
           {activeGalleryTab === "photo" && (
