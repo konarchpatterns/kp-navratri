@@ -2772,3 +2772,15 @@ footer {
     gap: 10px !important;
   }
 }
+.mobile-header-book-btn {
+  background-color: #EAB04E;
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+

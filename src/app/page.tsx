@@ -245,14 +245,22 @@ export default function Home() {
             />
           </div>
 
-          <button
-            className="menu-button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X /> : <Menu />}
-          </button>
+          <div className="mobile-header-actions" style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+            <button
+              className="mobile-header-book-btn mobile-only"
+              onClick={() => router.push("/book")}
+            >
+              Book Tickets
+            </button>
 
+            <button
+              className="menu-button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </header>
 
