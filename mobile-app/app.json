@@ -19,9 +19,7 @@
       "predictiveBackGestureEnabled": false,
       "package": "com.kevin920328.mobileapp"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "platforms": ["ios", "android"],
     "extra": {
       "eas": {
         "projectId": "feeff4f9-3de1-4f8a-9f15-9f49665c3969"

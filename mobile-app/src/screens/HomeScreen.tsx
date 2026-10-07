@@ -12,7 +12,7 @@ export default function HomeScreen({ navigation }: any) {
         
         {/* HERO SECTION */}
         <ImageBackground 
-          source={require('../../assets/images/hero_bg.jpg')} 
+          source={require('../../assets/images/kv.png')} 
           style={styles.heroBackground}
           imageStyle={styles.heroImage}
         >
