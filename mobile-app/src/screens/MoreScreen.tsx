@@ -18,6 +18,8 @@ export default function MoreScreen({ navigation }: any) {
       navigation.navigate('About');
     } else if (id === 'associates') {
       navigation.navigate('Associates');
+    } else if (id === 'location') {
+      navigation.navigate('Venue');
     }
   };
 

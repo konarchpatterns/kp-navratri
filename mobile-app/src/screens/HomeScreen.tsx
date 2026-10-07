@@ -79,7 +79,7 @@ export default function HomeScreen({ navigation }: any) {
               <Text style={styles.quickAccessText}>Schedule</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.quickAccessCard}>
+            <TouchableOpacity style={styles.quickAccessCard} onPress={() => navigation.navigate('Venue')}>
               <MapPin color={Colors.primary} size={32} />
               <Text style={styles.quickAccessText}>Venue</Text>
             </TouchableOpacity>

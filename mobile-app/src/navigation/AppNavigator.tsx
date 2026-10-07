@@ -12,6 +12,7 @@ import MoreScreen from '../screens/MoreScreen';
 import AboutScreen from '../screens/AboutScreen';
 import ScheduleScreen from '../screens/ScheduleScreen';
 import AssociatesScreen from '../screens/AssociatesScreen';
+import VenueScreen from '../screens/VenueScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -79,6 +80,7 @@ export default function AppNavigator() {
       <Stack.Screen name="About" component={AboutScreen} />
       <Stack.Screen name="Schedule" component={ScheduleScreen} />
       <Stack.Screen name="Associates" component={AssociatesScreen} />
+      <Stack.Screen name="Venue" component={VenueScreen} />
     </Stack.Navigator>
   );
 }
