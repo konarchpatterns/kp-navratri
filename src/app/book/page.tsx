@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import html2canvas from "html2canvas";
 import Link from "next/link";
 import { 
   ChevronLeft, Check, Ticket, User, CreditCard, 
@@ -84,6 +85,31 @@ export default function BookTickets() {
   const [showUpiModal, setShowUpiModal] = useState(false);
   const [selectedUpiApp, setSelectedUpiApp] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
+  
+  const [showToast, setShowToast] = useState(false);
+  const ticketRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (step === 4) {
+      setShowToast(true);
+      const timer = setTimeout(() => setShowToast(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [step]);
+
+  const downloadTicket = async () => {
+    if (!ticketRef.current) return;
+    try {
+      const canvas = await html2canvas(ticketRef.current, { backgroundColor: null });
+      const image = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = image;
+      link.download = `VVN_Ticket_260614001.png`;
+      link.click();
+    } catch (err) {
+      console.error("Failed to download ticket", err);
+    }
+  };
 
   const handleUpiClick = (app: string) => {
     setSelectedUpiApp(app);
@@ -112,6 +138,14 @@ export default function BookTickets() {
         </div>
         <div className="header-placeholder" />
       </header>
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="toast-notification fade-in">
+          <Check size={16} color="#4CAF50" style={{marginRight: 8}} />
+          Booking confirmation and ticket attached sent to {attendees[0]?.email || "your email"}.
+        </div>
+      )}
 
       {/* UPI Sandbox Modal */}
       {showUpiModal && (
@@ -382,7 +416,7 @@ export default function BookTickets() {
             <h1 className="success-title">Booking Confirmed!</h1>
             <p className="success-subtitle">Thank you for being a part of<br/>Vadodara Vibrant Navratri 2026</p>
 
-            <div className="ticket-pass">
+            <div className="ticket-pass" ref={ticketRef}>
               <div className="ticket-pass-header">
                 <img src="/images/logo.webp" alt="Logo" className="tp-logo" />
                 <div className="tp-title">
@@ -431,10 +465,12 @@ export default function BookTickets() {
               </div>
               
               {/* Perforated edge effect */}
-              <div className="ticket-divider" />
+              <div className="ticket-divider" data-html2canvas-ignore />
 
-              <div className="tp-actions">
-                <button className="tp-btn secondary"><Download size={16}/> Download Ticket</button>
+              <div className="tp-actions" data-html2canvas-ignore>
+                <button className="tp-btn secondary" onClick={downloadTicket}>
+                  <Download size={16}/> Download Ticket
+                </button>
                 <button className="tp-btn primary"><CalendarIcon size={16}/> Add to Calendar</button>
               </div>
             </div>
