@@ -483,7 +483,7 @@ export default function BookTickets() {
 
               {/* RIGHT SIDE: Ticket Stub */}
               <div className="ticket-right">
-                <img src="/images/logo-dark.png" alt="Logo" className="tr-logo" onError={(e) => e.currentTarget.src='/images/logo.webp'} />
+                <img src="/images/logo.webp" alt="Logo" className="tr-logo" />
                 
                 <div className="tr-type">
                   <h3 style={{fontSize: 12}}>{Object.entries(ticketQuantities).filter(([_, q]) => q > 0).map(([id, q]) => `${q}x ${TICKET_TYPES.find(t => t.id === id)?.title}`).join(', ')}</h3>
