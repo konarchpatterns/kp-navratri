@@ -1105,3 +1105,360 @@
   border: 1px solid #4CAF50;
 }
 
+
+/* Landscape Ticket Design */
+.ticket-landscape {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  background-color: transparent;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Left Block */
+.ticket-left {
+  flex: 2;
+  background: linear-gradient(to right, #4a0006, #1a0305);
+  position: relative;
+  padding: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.ticket-left::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/images/kv.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  mix-blend-mode: luminosity;
+  z-index: 0;
+}
+
+.tl-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.tl-logo {
+  width: 40px;
+  margin-bottom: 16px;
+}
+
+.tl-main-title {
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.tl-vadodara, .tl-vibrant {
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+
+.tl-navratri {
+  font-size: 42px;
+  font-weight: 900;
+  color: #EAB04E;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.tl-year {
+  font-size: 24px;
+  letter-spacing: 12px;
+  font-weight: 300;
+}
+
+.tl-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  border-top: 1px solid rgba(234, 176, 78, 0.3);
+  border-bottom: 1px solid rgba(234, 176, 78, 0.3);
+  padding: 16px 0;
+}
+
+.tl-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+}
+
+.tl-info-item strong {
+  font-size: 12px;
+  color: #fff;
+}
+
+.tl-info-item span {
+  font-size: 10px;
+  color: #EAB04E;
+}
+
+.tl-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.tl-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+
+.tl-feature span {
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+.tl-feature strong {
+  color: #EAB04E;
+}
+
+.tl-f-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.tl-f-text {
+  font-size: 9px;
+  color: #EAB04E;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+/* Perforation */
+.ticket-perforation {
+  width: 30px;
+  background-color: #f4e8d3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.perf-line {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  border-left: 2px dashed #ccc;
+  transform: translateX(-50%);
+}
+
+.perf-circle-top {
+  width: 20px;
+  height: 20px;
+  background-color: #1a0305;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.perf-circle-bottom {
+  width: 20px;
+  height: 20px;
+  background-color: #1a0305;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Right Block (Stub) */
+.ticket-right {
+  flex: 1;
+  background-color: #f4e8d3; /* Sand color */
+  padding: 24px;
+  color: #330b11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.ticket-right::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/images/mandala-bg.png');
+  background-size: cover;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.tr-logo {
+  width: 60px;
+  margin-bottom: 16px;
+  filter: brightness(0);
+}
+
+.tr-type {
+  background-color: #7b1113;
+  color: #fff;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.tr-type h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.tr-type p {
+  margin: 0;
+  font-size: 10px;
+  color: #EAB04E;
+  letter-spacing: 2px;
+}
+
+.tr-date {
+  margin-bottom: 20px;
+}
+
+.tr-label {
+  font-size: 10px;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.tr-value {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.tr-gate-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0;
+  margin-bottom: 24px;
+}
+
+.tr-divider {
+  width: 1px;
+  height: 30px;
+  background-color: #ccc;
+}
+
+.tr-qr {
+  margin-bottom: 24px;
+}
+
+.tr-qr img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+}
+
+.tr-qr p {
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.tr-rules {
+  width: 100%;
+  text-align: left;
+}
+
+.tr-rules p {
+  font-size: 9px;
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+}
+
+/* Static Email confirmation message */
+.email-confirmation-msg {
+  background-color: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.ec-text strong {
+  color: #4CAF50;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ec-text p {
+  color: #ccc;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .ticket-landscape {
+    flex-direction: column;
+  }
+  .ticket-perforation {
+    width: 100%;
+    height: 30px;
+    flex-direction: row;
+  }
+  .perf-line {
+    top: 50%;
+    bottom: auto;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    border-left: none;
+    border-top: 2px dashed #ccc;
+    transform: translateY(-50%);
+  }
+  .perf-circle-top {
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+  }
+  .perf-circle-bottom {
+    top: 50%;
+    right: -10px;
+    left: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  .tl-info-grid, .tl-features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

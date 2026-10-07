@@ -416,62 +416,124 @@ export default function BookTickets() {
             <h1 className="success-title">Booking Confirmed!</h1>
             <p className="success-subtitle">Thank you for being a part of<br/>Vadodara Vibrant Navratri 2026</p>
 
-            <div className="ticket-pass" ref={ticketRef}>
-              <div className="ticket-pass-header">
-                <img src="/images/logo.webp" alt="Logo" className="tp-logo" />
-                <div className="tp-title">
-                  VADODARA<br/><span>VIBRANT NAVRATRI 2026</span>
-                </div>
-                <div className="tp-confirmed">
-                  <Check size={12} color="#4CAF50" /> Confirmed
-                </div>
-              </div>
-              
-              <div className="ticket-pass-body">
-                <div className="tp-details">
-                  <p className="tp-label">Booking ID</p>
-                  <p className="tp-value-large">VVN260614001</p>
+            <div className="ticket-landscape" ref={ticketRef}>
+              {/* LEFT SIDE: Event Details */}
+              <div className="ticket-left">
+                <div className="tl-content">
+                  <img src="/images/logo.webp" alt="Logo" className="tl-logo" />
                   
-                  <p className="tp-value-medium" style={{marginTop: 16}}>14 OCT 2026 (WED)</p>
-                  
-                  <div className="tp-row">
-                    <div>
-                      <p className="tp-label">Gate</p>
-                      <p className="tp-value">A</p>
+                  <div className="tl-title-area">
+                    <h2 className="tl-main-title">
+                      <span className="tl-vadodara">VADODARA</span><br/>
+                      <span className="tl-vibrant">VIBRANT</span><br/>
+                      <span className="tl-navratri">NAVRATRI</span><br/>
+                      <span className="tl-year">2026</span>
+                    </h2>
+                  </div>
+
+                  <div className="tl-info-grid">
+                    <div className="tl-info-item">
+                      <CalendarIcon size={18} color="#EAB04E" />
+                      <div>
+                        <strong>11 - 19</strong><br/><span>OCTOBER 2026</span>
+                      </div>
                     </div>
-                    <div>
-                      <p className="tp-label">Entry Time</p>
-                      <p className="tp-value">7:00 PM</p>
+                    <div className="tl-info-item">
+                      <Clock size={18} color="#EAB04E" />
+                      <div>
+                        <strong>7:00 PM</strong><br/><span>ONWARDS</span>
+                      </div>
+                    </div>
+                    <div className="tl-info-item">
+                      <MapPin size={18} color="#EAB04E" />
+                      <div>
+                        <strong>VVN GARBA GROUND</strong><br/><span>VADODARA, GUJARAT</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="tp-row" style={{marginTop: 16}}>
-                    <div>
-                      <p className="tp-label">Attendee</p>
-                      <p className="tp-value"><User size={12} style={{marginRight: 4}}/> Konarch Prasad</p>
+                  <div className="tl-features">
+                    <div className="tl-feature">
+                      <img src="/images/dandiya-icon.png" alt="" className="tl-f-icon" onError={(e) => e.currentTarget.style.display='none'} />
+                      <span><strong>9 NIGHTS</strong><br/>OF GARBA</span>
                     </div>
-                    <div>
-                      <p className="tp-label">Tickets</p>
-                      <p className="tp-value">{ticketQuantities.general} × General Entry</p>
+                    <div className="tl-feature">
+                      <User size={16} color="#EAB04E" />
+                      <span><strong>30,000+</strong><br/>DAILY ENTHUSIASTS</span>
+                    </div>
+                    <div className="tl-feature">
+                      <img src="/images/mic-icon.png" alt="" className="tl-f-icon" onError={(e) => e.currentTarget.style.display='none'} />
+                      <span><strong>6+ FEATURED</strong><br/>ARTISTS</span>
+                    </div>
+                    <div className="tl-feature">
+                      <div className="tl-f-text">
+                        FOOD • CULTURE<br/>FUN • FAMILY
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+              
+              {/* PERFORATION */}
+              <div className="ticket-perforation">
+                <div className="perf-circle-top"></div>
+                <div className="perf-line"></div>
+                <div className="perf-circle-bottom"></div>
+              </div>
+
+              {/* RIGHT SIDE: Ticket Stub */}
+              <div className="ticket-right">
+                <img src="/images/logo-dark.png" alt="Logo" className="tr-logo" onError={(e) => e.currentTarget.src='/images/logo.webp'} />
                 
-                <div className="tp-qr">
-                  {/* Fake QR Code */}
-                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=VVN260614001" alt="QR Code" />
+                <div className="tr-type">
+                  <h3>GENERAL ENTRY</h3>
+                  <p>— ONE DAY PASS —</p>
+                </div>
+
+                <div className="tr-date">
+                  <p className="tr-label">DATE</p>
+                  <p className="tr-value">14 OCT 2026 (WED)</p>
+                </div>
+
+                <div className="tr-gate-time">
+                  <div>
+                    <p className="tr-label">GATE</p>
+                    <p className="tr-value">A</p>
+                  </div>
+                  <div className="tr-divider"></div>
+                  <div>
+                    <p className="tr-label">ENTRY TIME</p>
+                    <p className="tr-value">7:00 PM</p>
+                  </div>
+                </div>
+
+                <div className="tr-qr">
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=VVN260614001" alt="QR Code" />
                   <p>VVN260614001</p>
                 </div>
-              </div>
-              
-              {/* Perforated edge effect */}
-              <div className="ticket-divider" data-html2canvas-ignore />
 
-              <div className="tp-actions" data-html2canvas-ignore>
-                <button className="tp-btn secondary" onClick={downloadTicket}>
-                  <Download size={16}/> Download Ticket
-                </button>
-                <button className="tp-btn primary"><CalendarIcon size={16}/> Add to Calendar</button>
+                <div className="tr-rules">
+                  <p><User size={10} /> Valid for one person only</p>
+                  <p><span style={{fontSize:10}}>✕</span> Non-transferable</p>
+                  <p><span style={{fontSize:10}}>🆔</span> Please carry a valid ID</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="tp-actions" data-html2canvas-ignore>
+              <button className="tp-btn secondary" onClick={downloadTicket}>
+                <Download size={16}/> Download Ticket
+              </button>
+              <button className="tp-btn primary"><CalendarIcon size={16}/> Add to Calendar</button>
+            </div>
+            
+            <div className="email-confirmation-msg" data-html2canvas-ignore>
+              <div className="ec-icon">
+                <Check size={20} color="#4CAF50" />
+              </div>
+              <div className="ec-text">
+                <strong>Booking Confirmed!</strong>
+                <p>An email with your ticket and booking details has been sent to <strong>{attendees[0]?.email || "your email"}</strong>.</p>
               </div>
             </div>
 
