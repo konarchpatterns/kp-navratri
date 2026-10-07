@@ -10,6 +10,8 @@ import GalleryScreen from '../screens/GalleryScreen';
 import TicketsScreen from '../screens/TicketsScreen';
 import MoreScreen from '../screens/MoreScreen';
 import AboutScreen from '../screens/AboutScreen';
+import ScheduleScreen from '../screens/ScheduleScreen';
+import AssociatesScreen from '../screens/AssociatesScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -75,6 +77,8 @@ export default function AppNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Tabs" component={TabNavigator} />
       <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="Schedule" component={ScheduleScreen} />
+      <Stack.Screen name="Associates" component={AssociatesScreen} />
     </Stack.Navigator>
   );
 }

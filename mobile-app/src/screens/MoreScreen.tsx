@@ -16,6 +16,8 @@ export default function MoreScreen({ navigation }: any) {
   const handlePress = (id: string) => {
     if (id === 'about') {
       navigation.navigate('About');
+    } else if (id === 'associates') {
+      navigation.navigate('Associates');
     }
   };
 
